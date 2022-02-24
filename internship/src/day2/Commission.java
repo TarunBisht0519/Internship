@@ -2,10 +2,7 @@ package day2;
 
 public class Commission extends Department 
 {
-
-    
     String lname;
-    
     int age;
     int sales;
     Commission(String fn,String lname,String department,int age,int sales)
@@ -16,7 +13,6 @@ public class Commission extends Department
         this.age=age;
         this.sales=sales;
     }
-    
     public void salary() 
     {
         System.out.println("FIRST NAME OF EMPLOYEE "+fname);

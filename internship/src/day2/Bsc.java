@@ -2,10 +2,7 @@ package day2;
 
 public class Bsc extends Department
 {
-
-   
     String lname;
-  
     int age;
     int sales;
     Bsc(String fn,String lname,String department,int age,int sales)

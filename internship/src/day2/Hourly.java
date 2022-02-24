@@ -1,10 +1,7 @@
 package day2;
-
 public class Hourly extends Department 
 {
-    
     String lname;
-    
     int age;
     int hours;
     Hourly(String fn,String lname,String department,int age,int hours)
@@ -15,7 +12,6 @@ public class Hourly extends Department
         this.age=age;
         this.hours=hours;
     }
-    
     public void salary() 
     {
         System.out.println("FIRST NAME OF EMPLOYEE "+fname);
@@ -26,14 +22,10 @@ public class Hourly extends Department
         {
             int sal=(hourly*15)/10;
             System.out.println("SALARY :"+sal*hours);
-            
         }
         else
         {
             System.out.println("SALARY: "+hourly*hours);
-            
-        }
-        
+        }   
     }
-
 }

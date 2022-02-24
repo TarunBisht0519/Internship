@@ -62,11 +62,9 @@ public class Mains
                     break;
                     default:
                         System.out.println("PLEASE ENTER NUMBER BETWEEN 1 TO 4");
-                        break;
-                        
+                        break;  
                 }
-                break;
-                
+                break;    
             case 2:
                 System.out.println("ENTER FIRST NAME OF EMPLOYEE YOU WANT TO SEARCH");
                 String s=sc.nextLine();
@@ -92,8 +90,6 @@ public class Mains
                     System.out.println("PLEASE ENTER NUMBER BEWTWEEN 1 TO 3");
            
             }
-            
-            
             
         }
     }

@@ -1,12 +1,8 @@
 package day2;
-
 public class Salaried extends Department
 {
-
-    
     String lname;
     int age;
-    
     Salaried(String fn,String lname,String department,int age)
     {
         fname=fn;
@@ -21,7 +17,5 @@ public class Salaried extends Department
         System.out.println("AGE OF EMPLOYEE "+age);
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
         System.out.println("THE SALARY IS "+fixed);
-        
     }
-
 }
