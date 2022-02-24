@@ -18,6 +18,7 @@ public class Rectangle extends Shape
         System.out.println("LENGTH  :"+length);
         System.out.println("BREADTH  :"+breadth);
         System.out.println("AREA OF RECTANGLE IS "+length*breadth);
+        
 	}
 
 }
