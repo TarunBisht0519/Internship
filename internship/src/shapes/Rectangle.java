@@ -4,17 +4,20 @@ public class Rectangle extends Shape
 {
 	int length;
 	int breadth;
-	String name;
-	Rectangle(int length,int breadth,String name)
+	Rectangle(int length,int breadth,String n)
 	{
 		this.length=length;
 		this.breadth=breadth;
-		this.name=name;
+		name=n;
 	}
 	@Override
 	public void area() 
 	{
-		System.out.println("AREA OF Rectangle IS "+length*breadth);
+	    System.out.println("NAME OF SHAPE :"+name);
+        System.out.println("TYPE OF SHAPE: RECTANGLE");
+        System.out.println("LENGTH  :"+length);
+        System.out.println("BREADTH  :"+breadth);
+		System.out.println("AREA OF RECTANGLE IS "+length*breadth);
 	}
 
 }

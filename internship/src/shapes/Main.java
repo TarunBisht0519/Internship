@@ -26,7 +26,6 @@ public class Main
 	            sc.nextLine();
 	            Circle obj=new Circle(r,n1);
 	            arr.add(obj);
-	       
 	            continue;
 	        case 2:
 	            System.out.println("ENTER NAME OF Square");
@@ -36,7 +35,6 @@ public class Main
 	            sc.nextLine();
 	            Square obj1=new Square(n2,s1);
 	            arr.add(obj1);
-	          
 	            continue;
 	        case 3:
 	            System.out.println("ENTER NAME OF Rectangle");
@@ -51,72 +49,25 @@ public class Main
 	            arr.add(obj2);
 	            continue;
 	        case 4:
-	            System.out.println("ENTER 1 FOR ENTERING Circle");
-	            System.out.println("ENTER 2 FOR ENTERING Square");
-	            System.out.println("ENTER 3 FOR ENTERING Rectangle");
-	            int p=sc.nextInt();
-	            sc.nextLine();
 	            System.out.println("ENTER NAME OF Shape YOU ARE SEARCHING");
 	            String h=sc.nextLine();
-	            switch(p)
+	            int count=0;
+	            for(Shape d:arr)
 	            {
-	            case 1:
-	                int c1=0;
-	                for(Shape s:arr)
+	                if(d.name.equals(h))
 	                {
-	                    if(s instanceof Circle && ((Circle) s).name.equals(h))
-	                    {
-	                        s.area();
-	                        c1++;
-	                        break;
-	                    }
+	                    count++;
+	                    d.area();
 	                }
-	                if(c1==0)
-	                {
-	                    System.out.println("NOT FOUND");
-	                }
-	               
-	                break;
-	            case 2:
-	                int c2=0;
-	                for(Shape s:arr)
-	                {
-	                    if(s instanceof Square && ((Square)s).name.equals(h))
-	                    {
-	                        s.area();
-	                        c2++;
-	                        break;
-	                    }
-	                   
-	                }
-	                if(c2==0)
-                    {
-                        System.out.println("NOT FOUND");
-                    }
-	                break;
-	            case 3:
-	                int c3=0;
-	                for(Shape s:arr)
-	                {
-	                    if(s instanceof Rectangle && ((Rectangle) s).name.equals(h))
-	                    {
-	                        s.area();
-	                        c3++;
-	                        break;
-	                    } 
-	                }
-	                if(c3==0)
-                    {
-                        System.out.println("NOT FOUND");
-                    }
-	                break;
-	                
+	            }
+	            if(count==0)
+	            {
+	                System.out.println("SHAPE NOT FOUND");
 	            }
 	            continue;
-	             case 5:
-	                 System.exit(0);
-	            
-	          
+	        case 5:
+	            System.exit(0);
+	       
 	        }
 		}
 	}

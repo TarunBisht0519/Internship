@@ -3,18 +3,21 @@ package shapes;
 public class Circle extends Shape
 {
 	int radius;
-	String name;
-	Circle(int radius,String name)
+	
+	Circle(int radius,String n)
 	{
 		this.radius=radius;
-		this.name=name;	
+		name=n;	
 	}
 	
 	@Override
 	public void area() 
 	{
+	    System.out.println("NAME OF SHAPE :"+name);
+	    System.out.println("TYPE OF SHAPE: CIRCLE");
+	    System.out.println("RADIUS :"+radius);
 		int r=radius*radius;
-		System.out.println("AREA OF Circle IS "+Math.PI*r);	
+		System.out.println("AREA OF CIRCLE IS "+Math.PI*r);	
 	}
 
 }
