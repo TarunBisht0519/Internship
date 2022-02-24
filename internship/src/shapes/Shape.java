@@ -1,4 +1,4 @@
-package logical;
+package shapes;
 public abstract class Shape
 { 
 	public abstract void area();

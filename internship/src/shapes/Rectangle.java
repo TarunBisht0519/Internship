@@ -1,4 +1,4 @@
-package logical;
+package shapes;
 
 public class Rectangle extends Shape
 {
