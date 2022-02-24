@@ -1,17 +1,16 @@
-package day2;
-
-public class Commission extends Department 
+package payrol;
+public class Hourly extends Department 
 {
     String lname;
     int age;
-    int sales;
-    Commission(String fn,String lname,String department,int age,int sales)
+    int hours;
+    Hourly(String fn,String lname,String department,int age,int hours)
     {
         fname=fn;
         this.lname=lname;
         dep=department;
         this.age=age;
-        this.sales=sales;
+        this.hours=hours;
     }
     public void salary() 
     {
@@ -19,8 +18,14 @@ public class Commission extends Department
         System.out.println("LAST NAME OF EMPLOYEE "+lname);
         System.out.println("AGE OF EMPLOYEE "+age);
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
-        int sal=(int)(sales*(15/100.0f));
-        System.out.println("SALARY :"+sal);
+        if(hours>40)
+        {
+            int sal=(hourly*15)/10;
+            System.out.println("SALARY :"+sal*hours);
+        }
+        else
+        {
+            System.out.println("SALARY: "+hourly*hours);
+        }   
     }
-
 }

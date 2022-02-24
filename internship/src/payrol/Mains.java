@@ -1,4 +1,4 @@
-package day2;
+package payrol;
 import java.util.*;
 public class Mains 
 {

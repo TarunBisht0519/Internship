@@ -1,4 +1,4 @@
-package day2;
+package payrol;
 
 public class Bsc extends Department
 {
