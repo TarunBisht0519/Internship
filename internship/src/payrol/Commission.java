@@ -13,14 +13,23 @@ public class Commission extends Department
         this.age=age;
         this.sales=sales;
     }
+    int sal;
     public void salary() 
     {
         System.out.println("FIRST NAME OF EMPLOYEE "+fname);
         System.out.println("LAST NAME OF EMPLOYEE "+lname);
         System.out.println("AGE OF EMPLOYEE "+age);
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
-        int sal=(int)(sales*(15/100.0f));
+        sal=(int)(sales*(15/100.0f));
         System.out.println("SALARY :"+sal);
+        
+    }
+    public String getinfo()
+    {
+        return new StringBuffer(" First Name: ").append(fname).append("\n")
+                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n")
+                .append("DEPARTMENT TYPE :").append(dep).append("\n").append("SALARY OF EMPLOYEE :").append(sal).append("\n").toString();
+        
     }
 
 }

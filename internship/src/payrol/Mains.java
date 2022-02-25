@@ -1,5 +1,6 @@
 package payrol;
 import java.util.*;
+import java.io.*;
 public class Mains 
 {
     public static void main(String[] args) 
@@ -35,6 +36,18 @@ public class Mains
                     String dep="salaried";
                     Salaried obj=new Salaried(fname,lname,dep,age);
                     list.add(obj);
+                    try
+                    {
+                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
+                        FileWriter fr=new FileWriter(ob);
+                        String s=obj.getinfo();
+                        fr.write(s);
+                        fr.close();
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e);
+                    }
                     break;
                 case 2:
                     System.out.println("ENTER THE NUMBER OF HOURS WORKED");
@@ -43,6 +56,19 @@ public class Mains
                     String dep1="HOURLY";
                     Hourly obj2=new Hourly(fname,lname,dep1,age,h);
                     list.add(obj2);
+                    try
+                    {
+                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
+                        FileWriter fr=new FileWriter(ob);
+                        String s=obj2.getinfo();
+                        fr.write(s);
+                        fr.close();
+                        
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e);
+                    }
                     break;
                 case 3:
                     String dep2="Commission";
@@ -51,6 +77,18 @@ public class Mains
                     sc.nextLine();
                     Commission obj3=new Commission(fname,lname,dep2,age,s1);
                     list.add(obj3);
+                    try
+                    {
+                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
+                        FileWriter fr=new FileWriter(ob);
+                        String s=obj3.getinfo();
+                        fr.write(s);
+                        fr.close();
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e);
+                    }
                     break;
                 case 4:
                     String dep3="BASE SALARIED COMMISSION";
@@ -59,7 +97,21 @@ public class Mains
                     sc.nextLine();
                     Bsc obj4=new Bsc(fname,lname,dep3,age,s2);
                     list.add(obj4);
+                    try
+                    {
+                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
+                        FileWriter fr=new FileWriter(ob);
+                        String s=obj4.getinfo();
+                        fr.write(s);
+                        fr.close();
+                        
+                    }
+                    catch(Exception e)
+                    {
+                        System.out.println(e);
+                    }
                     break;
+                    
                     default:
                         System.out.println("PLEASE ENTER NUMBER BETWEEN 1 TO 4");
                         break;  
@@ -75,7 +127,6 @@ public class Mains
                     {
                         count++;
                         y.salary();
-                        
                     }
                 }
                 if(count==0)

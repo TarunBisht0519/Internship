@@ -18,4 +18,10 @@ public class Salaried extends Department
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
         System.out.println("THE SALARY IS "+fixed);
     }
+    public String getinfo()
+    {
+        return new StringBuffer(" First Name: ").append(fname).append("\n")
+                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n")
+                .append("DEPARTMENT TYPE :").append(dep).append("\n").append("SALARY OF EMPLOYEE :").append(fixed).append("\n").toString();
+    }
 }

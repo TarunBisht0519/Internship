@@ -12,7 +12,8 @@ public class Hourly extends Department
         this.age=age;
         this.hours=hours;
     }
-    public void salary() 
+    int sal;
+    public void  salary() 
     {
         System.out.println("FIRST NAME OF EMPLOYEE "+fname);
         System.out.println("LAST NAME OF EMPLOYEE "+lname);
@@ -20,12 +21,20 @@ public class Hourly extends Department
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
         if(hours>40)
         {
-            int sal=(hourly*15)/10;
-            System.out.println("SALARY :"+sal*hours);
+            sal=(hourly*15)/10;
+            System.out.println("SALARY OF EMPLOYEE IS "+sal);
         }
         else
         {
-            System.out.println("SALARY: "+hourly*hours);
+            sal=hourly*hours;
+            System.out.println("SALARY OF EMPLOYEE IS "+sal);
         }   
+       
+    }
+    public String getinfo()
+    {
+        return new StringBuffer(" First Name: ").append(fname).append("\n")
+                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n").append("DEPARTMENT TYPE :")
+                .append(dep).append("\n").append("SALARY OF EMPLOYEE :").append(sal).append("\n").toString();
     }
 }

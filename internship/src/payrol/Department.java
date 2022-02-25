@@ -8,9 +8,6 @@ public abstract class Department
     String dep;
     public String fname;
     public abstract void salary();
-    public String getdep()
-    {
-        return dep;
-    }
+    public abstract String getinfo();
 
 }
