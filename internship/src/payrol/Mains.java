@@ -30,24 +30,19 @@ public class Mains
                 System.out.println("SELECT 3 FOR COMMISSIONED TYPE ");
                 System.out.println("SELECT 4 FOR BASE SALARIED COMMISSION TYPE ");
                 int x=sc.nextInt();
+                try
+                {
+                    File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
+                    FileWriter fr=new FileWriter(ob);
+                
                 switch(x)
                 {
                 case 1:
                     String dep="salaried";
                     Salaried obj=new Salaried(fname,lname,dep,age);
                     list.add(obj);
-                    try
-                    {
-                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
-                        FileWriter fr=new FileWriter(ob);
-                        String s=obj.getinfo();
-                        fr.write(s);
-                        fr.close();
-                    }
-                    catch(Exception e)
-                    {
-                        System.out.println(e);
-                    }
+                    String s=obj.getinfo();
+                    fr.write(s);
                     break;
                 case 2:
                     System.out.println("ENTER THE NUMBER OF HOURS WORKED");
@@ -56,67 +51,42 @@ public class Mains
                     String dep1="HOURLY";
                     Hourly obj2=new Hourly(fname,lname,dep1,age,h);
                     list.add(obj2);
-                    try
-                    {
-                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
-                        FileWriter fr=new FileWriter(ob);
-                        String s=obj2.getinfo();
-                        fr.write(s);
-                        fr.close();
-                        
-                    }
-                    catch(Exception e)
-                    {
-                        System.out.println(e);
-                    }
+                    String s1=obj2.getinfo();
+                    fr.append(s1);
                     break;
                 case 3:
                     String dep2="Commission";
                     System.out.println("ENTER SALES RECORDED");
-                    int s1=sc.nextInt();
+                    int a=sc.nextInt();
                     sc.nextLine();
-                    Commission obj3=new Commission(fname,lname,dep2,age,s1);
+                    Commission obj3=new Commission(fname,lname,dep2,age,a);
                     list.add(obj3);
-                    try
-                    {
-                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
-                        FileWriter fr=new FileWriter(ob);
-                        String s=obj3.getinfo();
-                        fr.write(s);
-                        fr.close();
-                    }
-                    catch(Exception e)
-                    {
-                        System.out.println(e);
-                    }
+                    String s2=obj3.getinfo();
+                    fr.append(s2);
                     break;
                 case 4:
                     String dep3="BASE SALARIED COMMISSION";
                     System.out.println("ENTER THE SALES RECORDED");
-                    int s2=sc.nextInt();
+                    int a1=sc.nextInt();
                     sc.nextLine();
-                    Bsc obj4=new Bsc(fname,lname,dep3,age,s2);
+                    Bsc obj4=new Bsc(fname,lname,dep3,age,a1);
                     list.add(obj4);
-                    try
-                    {
-                        File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
-                        FileWriter fr=new FileWriter(ob);
-                        String s=obj4.getinfo();
-                        fr.write(s);
-                        fr.close();
-                        
-                    }
-                    catch(Exception e)
-                    {
-                        System.out.println(e);
-                    }
+                    String s3=obj4.getinfo();
+                    fr.append(s3);
                     break;
                     
                     default:
                         System.out.println("PLEASE ENTER NUMBER BETWEEN 1 TO 4");
                         break;  
+                        }
+                fr.close();
                 }
-                break;    
+                
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+                   break;
             case 2:
                 System.out.println("ENTER FIRST NAME OF EMPLOYEE YOU WANT TO SEARCH");
                 String s=sc.nextLine();
