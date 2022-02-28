@@ -12,9 +12,9 @@ public class Mains
             System.out.println("ENTER 1 FOR ENTER NEW EMPLOYEE");
             System.out.println("ENTER 2 FOR SEARCHING EMPLOYEE");
             System.out.println("ENTER 3 FOR EXITING");
-            int d=sc.nextInt();
+            int option=sc.nextInt();
             sc.nextLine();
-            switch(d) 
+            switch(option) 
             {
             case 1:
                 System.out.println("ENTER YOUR FIRST NAME");
@@ -29,52 +29,52 @@ public class Mains
                 System.out.println("SELECT 2 FOR HOURLY TYPE ");
                 System.out.println("SELECT 3 FOR COMMISSIONED TYPE ");
                 System.out.println("SELECT 4 FOR BASE SALARIED COMMISSION TYPE ");
-                int x=sc.nextInt();
+                int option1=sc.nextInt();
+                sc.nextLine();
                 try
                 {
                     File ob=new File("C:\\Users\\tarun.bisht\\Desktop\\employee.txt");
                     FileWriter fr=new FileWriter(ob);
                 
-                switch(x)
+                switch(option1)
                 {
                 case 1:
                     String dep="salaried";
                     Salaried obj=new Salaried(fname,lname,dep,age);
                     list.add(obj);
-                    String s=obj.getinfo();
-                    fr.write(s);
+                    String detail=obj.getinfo();
+                    fr.write(detail);
                     break;
                 case 2:
                     System.out.println("ENTER THE NUMBER OF HOURS WORKED");
-                    int h=sc.nextInt();
+                    int hour=sc.nextInt();
                     sc.nextLine();
                     String dep1="HOURLY";
-                    Hourly obj2=new Hourly(fname,lname,dep1,age,h);
+                    Hourly obj2=new Hourly(fname,lname,dep1,age,hour);
                     list.add(obj2);
-                    String s1=obj2.getinfo();
-                    fr.append(s1);
+                    String detail1=obj2.getinfo();
+                    fr.append(detail1);
                     break;
                 case 3:
                     String dep2="Commission";
                     System.out.println("ENTER SALES RECORDED");
-                    int a=sc.nextInt();
+                    int sales=sc.nextInt();
                     sc.nextLine();
-                    Commission obj3=new Commission(fname,lname,dep2,age,a);
+                    Commission obj3=new Commission(fname,lname,dep2,age,sales);
                     list.add(obj3);
-                    String s2=obj3.getinfo();
-                    fr.append(s2);
+                    String detail2=obj3.getinfo();
+                    fr.append(detail2);
                     break;
                 case 4:
                     String dep3="BASE SALARIED COMMISSION";
                     System.out.println("ENTER THE SALES RECORDED");
-                    int a1=sc.nextInt();
+                    int sales1=sc.nextInt();
                     sc.nextLine();
-                    Bsc obj4=new Bsc(fname,lname,dep3,age,a1);
+                    Bsc obj4=new Bsc(fname,lname,dep3,age,sales1);
                     list.add(obj4);
-                    String s3=obj4.getinfo();
-                    fr.append(s3);
+                    String detail3=obj4.getinfo();
+                    fr.append(detail3);
                     break;
-                    
                     default:
                         System.out.println("PLEASE ENTER NUMBER BETWEEN 1 TO 4");
                         break;  
@@ -86,14 +86,14 @@ public class Mains
                 {
                     System.out.println(e);
                 }
-                   break;
+                break;
             case 2:
                 System.out.println("ENTER FIRST NAME OF EMPLOYEE YOU WANT TO SEARCH");
-                String s=sc.nextLine();
+                String first=sc.nextLine();
                 int count=0;
                 for(Department y:list)
                 {
-                    if(y.fname.equals(s))
+                    if(y.fname.equals(first))
                     {
                         count++;
                         y.salary();
