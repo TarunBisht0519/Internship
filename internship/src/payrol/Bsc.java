@@ -30,8 +30,8 @@ public class Bsc extends Department
     }
     public String getinfo()
     {
-        return new StringBuffer(" First Name: ").append(fname).append("\n")
+        return new StringBuffer("(.)First Name: ").append(fname).append("\n")
                 .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n")
-                .append("DEPARTMENT TYPE :").append(dep).append("\n").append("SALARY OF EMPLOYEE :").append(sals).append("\n").toString();
+                .append(" DEPARTMENT TYPE :").append(dep).append("\n").append(" SALARY OF EMPLOYEE :").append(sals).append("\n").toString();
     }
 }
