@@ -2,15 +2,13 @@ package payrol;
 
 public class Commission extends Department 
 {
-    String lname;
-    int age;
     int sales;
-    Commission(String fn,String lname,String department,int age,int sales)
+    Commission(String fn,String ln,String department,int aged,int sales)
     {
         fname=fn;
-        this.lname=lname;
+        lname=ln;
         dep=department;
-        this.age=age;
+        age=aged;
         this.sales=sales;
     }
     int sal;
@@ -22,14 +20,8 @@ public class Commission extends Department
         System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
         sal=(int)(sales*(15/100.0f));
         System.out.println("SALARY :"+sal);
-        
+        pay=sal;
     }
-    public String getinfo()
-    {
-        return new StringBuffer("(.)First Name: ").append(fname).append("\n")
-                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n")
-                .append(" DEPARTMENT TYPE :").append(dep).append("\n").append(" SALARY OF EMPLOYEE :").append(sal).append("\n").toString();
-        
-    }
+    
 
 }

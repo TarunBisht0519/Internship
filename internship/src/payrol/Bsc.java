@@ -2,15 +2,13 @@ package payrol;
 
 public class Bsc extends Department
 {
-    String lname;
-    int age;
     int sales;
-    Bsc(String fn,String lname,String department,int age,int sales)
+    Bsc(String fn,String ln,String department,int aged,int sales)
     {
         fname=fn;
-        this.lname=lname;
+        lname=ln;
         dep=department;
-        this.age=age;
+        age=aged;
         this.sales=sales;
     }
     int sals;
@@ -24,14 +22,7 @@ public class Bsc extends Department
         int inc=(int)(base*(10/100.0f));
         sals=base+inc+sals;
         System.out.println("COMPANY DECIDED TO GIVE INCREMENT OF 10% OF YOUR CURRENT BASE SALARY");
-    
         System.out.println("NEW SALARY IS "+sals);
-        
-    }
-    public String getinfo()
-    {
-        return new StringBuffer("(.)First Name: ").append(fname).append("\n")
-                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n")
-                .append(" DEPARTMENT TYPE :").append(dep).append("\n").append(" SALARY OF EMPLOYEE :").append(sals).append("\n").toString();
+        pay=sals;
     }
 }

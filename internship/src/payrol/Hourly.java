@@ -1,15 +1,14 @@
 package payrol;
 public class Hourly extends Department 
 {
-    String lname;
-    int age;
+    
     int hours;
-    Hourly(String fn,String lname,String department,int age,int hours)
+    Hourly(String fn,String ln,String department,int aged,int hours)
     {
         fname=fn;
-        this.lname=lname;
+        lname=ln;
         dep=department;
-        this.age=age;
+        age=aged;
         this.hours=hours;
     }
     int sal;
@@ -23,18 +22,15 @@ public class Hourly extends Department
         {
             sal=(hourly*15)/10;
             System.out.println("SALARY OF EMPLOYEE IS "+sal);
+            pay=sal;
         }
         else
         {
             sal=hourly*hours;
             System.out.println("SALARY OF EMPLOYEE IS "+sal);
+            pay=sal;
         }   
        
     }
-    public String getinfo()
-    {
-        return new StringBuffer("(.)First Name: ").append(fname).append("\n")
-                .append(" Last Name : ").append(this.lname).append("\n").append(" Age : ").append(this.age).append("\n").append(" DEPARTMENT TYPE :")
-                .append(dep).append("\n").append(" SALARY OF EMPLOYEE :").append(sal).append("\n").toString();
-    }
+    
 }

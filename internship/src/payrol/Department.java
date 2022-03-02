@@ -7,7 +7,10 @@ public abstract class Department
     int base=12000;
     String dep;
     public String fname;
+    public String lname;
+    public int age;
+    public int pay;
     public abstract void salary();
-    public abstract String getinfo();
+    
 
 }

@@ -1,17 +1,59 @@
 package payrol;
 import java.util.*;
-import java.io.*;
+import java.sql.*;
 public class Mains 
 {
+    public void connection(Department d )
+    {
+        String dburl="jdbc:mysql://localhost:3306/employee";
+        String user="root";
+        String pass="Tarunbisht@0519";
+        Connection myconn=null;
+        PreparedStatement st=null;
+        try
+        {
+            myconn=DriverManager.getConnection(dburl,user,pass);
+            String first=d.fname;
+            first=first.toUpperCase();
+            String second=d.lname;
+            second=second.toUpperCase();
+            int age=d.age;
+            String dep=d.dep;
+            dep=dep.toUpperCase();
+            int sal=d.pay;
+            st=myconn.prepareStatement("insert into info values(?,?,?,?,?)");
+            st.setString(1, first);
+            st.setString(2, second);
+            st.setInt(3, age);
+            st.setString(4, dep);
+            st.setInt(5,sal);
+            int i=st.executeUpdate();  
+
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            try 
+            {
+                st.close();
+            } 
+            catch (SQLException e) 
+            {
+                e.printStackTrace();
+            }
+        }
+    }
     public static void main(String[] args) 
     {
         Scanner sc=new Scanner(System.in);
         ArrayList<Department>list=new ArrayList<Department>();
+        Mains object=new Mains();
+        
         try
         {
-            File ob=new File("C:\\Users\\tarun.bisht\\Documents\\emp.txt");
-            FileWriter fr=new FileWriter(ob);
-            fr.write("EMPLOYEES INFORMATION IS SAVED IN THIS FILE "+"\n");
             while(true)
             {
                 System.out.println("ENTER 1 FOR ENTER NEW EMPLOYEE");
@@ -42,9 +84,7 @@ public class Mains
                         String dep="salaried";
                         Salaried obj=new Salaried(fname,lname,dep,age);
                         list.add(obj);
-                        String detail=obj.getinfo();
-                        fr.append(detail);
-                        fr.flush(); 
+                        object.connection(obj);
                         break;
                     case 2:
                         System.out.println("ENTER THE NUMBER OF HOURS WORKED");
@@ -53,9 +93,7 @@ public class Mains
                         String dep1="HOURLY";
                         Hourly obj2=new Hourly(fname,lname,dep1,age,hour);
                         list.add(obj2);
-                        String detail1=obj2.getinfo();
-                        fr.append(detail1);
-                        fr.flush();
+                        object.connection(obj2);
                         break;
                     case 3:
                         String dep2="Commission";
@@ -64,9 +102,7 @@ public class Mains
                         sc.nextLine();
                         Commission obj3=new Commission(fname,lname,dep2,age,sales);
                         list.add(obj3);
-                        String detail2=obj3.getinfo();
-                        fr.append(detail2);
-                        fr.flush();
+                        object.connection(obj3);
                         break;
                     case 4:
                         String dep3="BASE SALARIED COMMISSION";
@@ -75,9 +111,7 @@ public class Mains
                         sc.nextLine();
                         Bsc obj4=new Bsc(fname,lname,dep3,age,sales1);
                         list.add(obj4);
-                        String detail3=obj4.getinfo();
-                        fr.append(detail3);
-                        fr.flush();
+                        object.connection(obj4);
                         break;
                         default:
                             System.out.println("PLEASE ENTER NUMBER BETWEEN 1 TO 4");
@@ -107,7 +141,6 @@ public class Mains
                     System.exit(0);
                     default:
                         System.out.println("PLEASE ENTER NUMBER BEWTWEEN 1 TO 3");
-                        fr.close();
                         sc.close();
                         break;
                         
