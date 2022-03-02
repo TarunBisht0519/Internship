@@ -1,7 +1,7 @@
 package payrol;
 import java.util.*;
 import java.sql.*;
-public class Mains 
+public class Mains extends Search
 {
     public void connection(Department d )
     {
@@ -20,7 +20,7 @@ public class Mains
             int age=d.age;
             String dep=d.dep;
             dep=dep.toUpperCase();
-            int sal=d.pay;
+            int sal=d.salary();
             st=myconn.prepareStatement("insert into info values(?,?,?,?,?)");
             st.setString(1, first);
             st.setString(2, second);
@@ -46,10 +46,10 @@ public class Mains
             }
         }
     }
+    
     public static void main(String[] args) 
     {
         Scanner sc=new Scanner(System.in);
-        ArrayList<Department>list=new ArrayList<Department>();
         Mains object=new Mains();
         
         try
@@ -83,7 +83,6 @@ public class Mains
                     case 1:
                         String dep="salaried";
                         Salaried obj=new Salaried(fname,lname,dep,age);
-                        list.add(obj);
                         object.connection(obj);
                         break;
                     case 2:
@@ -92,7 +91,6 @@ public class Mains
                         sc.nextLine();
                         String dep1="HOURLY";
                         Hourly obj2=new Hourly(fname,lname,dep1,age,hour);
-                        list.add(obj2);
                         object.connection(obj2);
                         break;
                     case 3:
@@ -101,7 +99,6 @@ public class Mains
                         int sales=sc.nextInt();
                         sc.nextLine();
                         Commission obj3=new Commission(fname,lname,dep2,age,sales);
-                        list.add(obj3);
                         object.connection(obj3);
                         break;
                     case 4:
@@ -110,7 +107,6 @@ public class Mains
                         int sales1=sc.nextInt();
                         sc.nextLine();
                         Bsc obj4=new Bsc(fname,lname,dep3,age,sales1);
-                        list.add(obj4);
                         object.connection(obj4);
                         break;
                         default:
@@ -122,20 +118,11 @@ public class Mains
                 case 2:
                     System.out.println("ENTER FIRST NAME OF EMPLOYEE YOU WANT TO SEARCH");
                     String first=sc.nextLine();
-                    int count=0;
-                    for(Department y:list)
-                    {
-                        if(y.fname.equals(first))
-                        {
-                            count++;
-                            y.salary();
-                        }
-                    }
-                    if(count==0)
-                    {
-                        System.out.println("EMPLOYEE NOT FOUND");
-                        
-                    }
+                    first=first.toUpperCase();
+                    System.out.println("ENTER SECOND NAME OF EMPLOYEE YOU WANT TO SEARCH");
+                    String second=sc.nextLine();
+                    second=second.toUpperCase();
+                    object.searching(first, second);
                     continue;
                 case 3:
                     System.exit(0);
@@ -154,4 +141,5 @@ public class Mains
         }
         
     }
+
 }

@@ -9,14 +9,9 @@ public class Salaried extends Department
         dep=department;
         age=aged;
     }
-    public void salary() 
+    public int salary() 
     {
-        System.out.println("FIRST NAME OF EMPLOYEE "+fname);
-        System.out.println("LAST NAME OF EMPLOYEE "+lname);
-        System.out.println("AGE OF EMPLOYEE "+age);
-        System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
-        System.out.println("THE SALARY IS "+fixed);
-        pay=fixed;
+        return fixed;
     }
     
 }

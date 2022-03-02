@@ -12,25 +12,20 @@ public class Hourly extends Department
         this.hours=hours;
     }
     int sal;
-    public void  salary() 
+    public int salary() 
     {
-        System.out.println("FIRST NAME OF EMPLOYEE "+fname);
-        System.out.println("LAST NAME OF EMPLOYEE "+lname);
-        System.out.println("AGE OF EMPLOYEE "+age);
-        System.out.println("DEPARTMENT TYPE OF EMPLOYEE :"+dep);
+        
         if(hours>40)
         {
             sal=(hourly*15)/10;
-            System.out.println("SALARY OF EMPLOYEE IS "+sal);
-            pay=sal;
         }
         else
         {
             sal=hourly*hours;
-            System.out.println("SALARY OF EMPLOYEE IS "+sal);
-            pay=sal;
         }   
-       
+        
+       return sal;
     }
+    
     
 }

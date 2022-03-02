@@ -9,8 +9,7 @@ public abstract class Department
     public String fname;
     public String lname;
     public int age;
-    public int pay;
-    public abstract void salary();
+    public abstract int salary();
     
 
 }
