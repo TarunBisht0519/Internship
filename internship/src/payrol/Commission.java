@@ -1,6 +1,6 @@
 package payrol;
 
-public class Commission extends Department 
+public class Commission extends Employee 
 {
     int sales;
     Commission(String fn,String ln,String department,int aged,int sales)

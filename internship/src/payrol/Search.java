@@ -1,6 +1,6 @@
 package payrol;
 import java.sql.*;
-public class Search
+public class Search extends Insert
 {
     String dburl="jdbc:mysql://localhost:3306/employee";
     String user ="root";

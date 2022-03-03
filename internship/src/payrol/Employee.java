@@ -1,6 +1,6 @@
 package payrol;
 
-public abstract class Department 
+public abstract class Employee 
 {
     public int fixed=10000;
     int hourly=500;
@@ -10,6 +10,4 @@ public abstract class Department
     public String lname;
     public int age;
     public abstract int salary();
-    
-
 }

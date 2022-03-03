@@ -1,5 +1,5 @@
 package payrol;
-public class Salaried extends Department
+public class Salaried extends Employee
 {
     
     Salaried(String fn,String ln,String department,int aged)

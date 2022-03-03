@@ -5,7 +5,7 @@ public class test1
     public static void main(String[] args) 
     {
         Connection myconn=null;
-        String dburl="jdbc:mysql://localhost:3306/employee";
+        String dburl=" ";
         String user="root";
         String password="Tarunbisht@0519";
          try
@@ -14,6 +14,7 @@ public class test1
             myconn=DriverManager.getConnection(dburl,user,password);
             Statement myst=myconn.createStatement();
             myst.execute("truncate table info");
+            
             int rows=myst.executeUpdate("insert into info "+"(fname,lname,age,dep,salary)"+"values "+"('tarun','bisht',22,'salaried',200000000)");
             int rows2=myst.executeUpdate("insert into info "+"(fname,lname,age,dep,salary)"+"values "+"('mankirat','kaur',22,'commissioned',15000000)");
             int rows3=myst.executeUpdate("insert into info "+"(fname,lname,age,dep,salary)"+"values "+"('taniya','bisht',25,'salaried',150000000)");
@@ -42,6 +43,10 @@ public class test1
          catch(Exception e)
          {
              System.out.println(e);
+         }
+         finally
+         {
+             
          }
         
     }

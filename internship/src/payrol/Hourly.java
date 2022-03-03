@@ -1,5 +1,5 @@
 package payrol;
-public class Hourly extends Department 
+public class Hourly extends Employee 
 {
     
     int hours;

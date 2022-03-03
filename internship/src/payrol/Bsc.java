@@ -1,6 +1,6 @@
 package payrol;
 
-public class Bsc extends Department
+public class Bsc extends Employee
 {
     int sales;
     Bsc(String fn,String ln,String department,int aged,int sales)
